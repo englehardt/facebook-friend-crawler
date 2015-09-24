@@ -154,8 +154,6 @@ class TaskManager:
         self.sock.close()  # close socket to data aggregator
         self.kill_data_aggregator()
 
-        post_processing.run(self.db_path) # launch post-crawl processing
-
     # CRAWLER COMMAND CODE
 
     def distribute_command(self, command, index=None, timeout=None, reset=False):

@@ -54,6 +54,9 @@ def extract_friends(user, username_str, password_str, webdriver, browser_params)
     root_dir = os.path.dirname(__file__)
     data_dir = os.path.realpath(root_dir + '/../../../data/fbfriends/')
 
+    if not os.path.exists(data_dir):
+        os.mkdir(data_dir)
+
     with codecs.open(data_dir + '/' + user + '.friends', 'w', encoding='utf-8') as f:
         for name, url in friends.items():
             f.write(name + ',' + url + '\n')
