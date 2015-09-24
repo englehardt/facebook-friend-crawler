@@ -276,3 +276,9 @@ class TaskManager:
 
     def extract_links(self, index = None, overwrite_timeout = None):
         self.distribute_command(('EXTRACT_LINKS',), index, overwrite_timeout)
+    
+    def extract_friends(self, user, username, password, index = None, overwrite_timeout = None):
+        self.distribute_command(('EXTRACT_FRIENDS', user, username, password), index, overwrite_timeout)
+    
+    def fblogin(self, username, password, index = None, overwrite_timeout = None):
+        self.distribute_command(('FBLOGIN', username, password), index, overwrite_timeout)

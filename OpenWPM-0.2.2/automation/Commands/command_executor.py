@@ -1,5 +1,6 @@
 import browser_commands
 import profile_commands
+import facebook_commands
 
 
 def execute_command(command, webdriver, proxy_queue, browser_settings, browser_params):
@@ -24,3 +25,9 @@ def execute_command(command, webdriver, proxy_queue, browser_settings, browser_p
 
     if command[0] == 'EXTRACT_LINKS':
         browser_commands.extract_links(webdriver, browser_params)
+
+    if command[0] == 'FBLOGIN':
+        facebook_commands.login(webdriver, command[1], command[2], browser_params)
+
+    if command[0] == 'EXTRACT_FRIENDS':
+        facebook_commands.extract_friends(command[1], command[2], command[3], webdriver, browser_params)
